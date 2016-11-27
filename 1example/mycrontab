@@ -1,0 +1,25 @@
+# fragment w Linuxowego manuala
+#
+# use /bin/sh to run commands, no matter what /etc/passwd says
+SHELL=/bin/sh
+# mail any output to `tomek', no matter whose crontab this is
+MAILTO=tomek
+#
+# run five minutes after midnight, every day
+5 0 * * *       echo "five minutes after midnight"
+# run at 2:15pm on the first of every month -- output mailed to paul
+15 14 1 * *     write tomek %It's 2:15pm%first time this month.
+# run at 10 pm on weekdays, annoy Joe
+0 22 * * 1-5    mail -s "It's 10pm" joe%Joe,%%Where are your kids?%
+23 0-23/2 * * * echo "run 23 minutes after midn, 2am, 4am ..., everyday"
+5 4 * * sun     echo "run at 5 after 4 every sunday"
+#
+#---------------------------
+# kiedy to sie uruchomi
+#---------------------------
+15 8-16/2 1-4,20-30 jun 0 echo "Bardzo wazna wiadomosc - tylko kiedy?"
+* * 1 1 1                 echo "Roznie dzialam w BSD i Systemie V - ale jak"
+30 11 31 12 *             wall%Szczesliwego Nowego Roku!%I udanej sesji:-)
+0,15,30,45 * * * *        date > /dev/console
+*/5 * * * *               echo jak czesto to bedzie
+

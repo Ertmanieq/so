@@ -1,0 +1,108 @@
+# usage: reverse arrayname
+reverse()
+{
+	local -a R
+	local -i i
+	local rlen temp
+
+	# make r a copy of the array whose name is passed as an arg
+	eval R=\( \"\$\{$1\[@\]\}\" \)
+
+	# reverse R
+	rlen=${#R[@]}
+
+	for ((i=0; i < rlen/2; i++ ))
+	do
+		temp=${R[i]}
+		R[i]=${R[rlen-i-1]}
+		R[rlen-i-1]=$temp
+	done
+
+	# and assign R back to array whose name is passed as an arg
+	eval $1=\( \"\$\{R\[@\]\}\" \)
+}
+
+echo "------------------------------------------"
+A=(1 2 3 4 5 6 7)
+echo "oryginal: ${A[@]}"
+reverse A
+echo "reverse : ${A[@]}"
+reverse A
+echo "revers 2: ${A[@]}"
+echo "------------------------------------------"
+
+# unset last element of A
+alen=${#A[@]}
+unset A[$alen-1]
+echo "unset the last elem: ${A[@]}"
+
+# ashift -- like shift, but for arrays
+
+ashift()
+{
+	local -a R
+	local n
+
+	case $# in
+	1)	n=1 ;;
+	2)	n=$2 ;;
+	*)	echo "$FUNCNAME: usage: $FUNCNAME array [count]" >&2
+		exit 2;;
+	esac
+
+	# make r a copy of the array whose name is passed as an arg
+	eval R=\( \"\$\{$1\[@\]\}\" \)
+
+	# shift R
+	R=( "${R[@]:$n}" )
+
+	# and assign R back to array whose name is passed as an arg
+	eval $1=\( \"\$\{R\[@\]\}\" \)
+}
+echo "------------------------------------------"
+ashift A 2
+echo "shift 2:  ${A[@]}"
+
+ashift A
+echo "shift  :  ${A[@]}"
+
+ashift A 7
+echo "shift 7:  ${A[@]}"
+echo "------------------------------------------"
+
+# Sort the members of the array whose name is passed as the first non-option
+# arg.  If -u is the first arg, remove duplicate array members.
+array_sort()
+{
+	local -a R
+	local u
+
+	case "$1" in
+	-u)	u=-u ; shift ;;
+	esac
+
+	if [ $# -eq 0 ]; then
+		echo "array_sort: argument expected" >&2
+		return 1
+	fi
+
+	# make r a copy of the array whose name is passed as an arg
+	eval R=\( \"\$\{$1\[@\]\}\" \)
+
+	# sort R
+	R=( $( printf "%s\n" "${A[@]}" | sort $u) )
+
+	# and assign R back to array whose name is passed as an arg
+	eval $1=\( \"\$\{R\[@\]\}\" \)
+	return 0
+}
+
+A=(3 1 4 1 5 9 2 6 5 3 2)
+echo "unsorted A: ${A[@]}"
+array_sort A
+echo "sort A    : ${A[@]}"
+
+A=(3 1 4 1 5 9 2 6 5 3 2)
+array_sort -u A
+echo "sort a -u : ${A[@]}"
+echo "---------------- THE END -----------------"

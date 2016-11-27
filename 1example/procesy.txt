@@ -1,0 +1,67 @@
+  PID TTY      STAT   TIME COMMAND
+    1 ?        S      0:03 init
+    2 ?        SW     0:00 [keventd]
+    3 ?        SW     0:00 [kapmd]
+    4 ?        SWN    0:00 [ksoftirqd_CPU0]
+    5 ?        SW     0:01 [kswapd]
+    6 ?        SW     0:00 [bdflush]
+    7 ?        SW     0:00 [kupdated]
+    8 ?        SW     0:00 [mdrecoveryd]
+   12 ?        SW     0:00 [kjournald]
+   85 ?        SW     0:00 [khubd]
+  600 ?        S      0:00 syslogd -m 0
+  605 ?        S      0:00 klogd -x
+  625 ?        S      0:00 portmap
+  654 ?        S      0:00 rpc.statd
+  732 ?        S      0:00 /sbin/cardmgr
+  789 ?        S      0:00 /usr/sbin/apmd -p 10 -w 5 -W -P /etc/sysconfig/apm-sc
+  905 ?        S      0:00 xinetd -stayalive -reuse -pidfile /var/run/xinetd.pid
+  946 ?        S      0:00 sendmail: accepting connections
+  965 ?        S      0:00 gpm -t ps/2 -m /dev/mouse
+  983 ?        S      0:00 crond
+ 1049 ?        S      0:04 xfs -droppriv -daemon
+ 1085 ?        S      0:00 /usr/sbin/atd
+ 1143 ?        S      0:00 /usr/bin/postmaster
+ 1163 ?        S      0:00 postgres: stats buffer process   
+ 1164 ?        S      0:00 postgres: stats collector process   
+ 1168 ?        S      0:00 rhnsd --interval 240
+ 1191 tty1     S      0:00 /sbin/mingetty tty1
+ 1192 tty2     S      0:00 /sbin/mingetty tty2
+ 1193 tty3     S      0:00 /sbin/mingetty tty3
+ 1194 tty4     S      0:00 /sbin/mingetty tty4
+ 1195 tty5     S      0:00 /sbin/mingetty tty5
+ 1196 tty6     S      0:00 /sbin/mingetty tty6
+ 1197 ?        S      0:00 /usr/bin/gdm -nodaemon
+ 1204 ?        S      0:00 /usr/bin/gdm -nodaemon
+ 1205 ?        S<     1:04 /usr/bin/X11/X :0 -auth /var/gdm/:0.Xauth
+ 1217 ?        S      0:00 /usr/bin/gnome-session
+ 1301 ?        S      0:00 gnome-smproxy --sm-config-prefix /.gnome-smproxy-BvFb
+ 1313 ?        S      0:02 sawfish --sm-client-id 117f00000100010439453080000001
+ 1319 ?        S      0:00 xscreensaver -no-splash -timeout 20 -nice 10
+ 1332 ?        S      0:01 nautilus --sm-config-prefix /nautilus-AsDeH6/ --sm-cl
+ 1334 ?        S      0:00 magicdev --sm-config-prefix /magicdev-Kle3xa/ --sm-cl
+ 1336 ?        S      0:04 panel --sm-config-prefix /panel.d/default-v6hPx1/ --s
+ 1339 ?        S      0:00 gnome-name-service
+ 1344 ?        S      0:01 gnome-terminal --sm-config-prefix /gnome-terminal-Flm
+ 1345 ?        S      0:00 gnome-pty-helper
+ 1347 ?        S      0:00 /usr/bin/gconfd-1 10
+ 1348 pts/0    S      0:00 bash
+ 1357 pts/1    S      0:00 bash
+ 1406 ?        S      0:00 oafd --ac-activate --ior-output-fd=14
+ 1408 ?        S      0:00 deskguide_applet --activate-goad-server deskguide_app
+ 1410 ?        S      0:00 battstat_applet --activate-goad-server battstat_apple
+ 1413 ?        S      0:03 /usr/bin/python /usr/bin/rhn-applet --activate-goad-s
+ 1415 ?        S      0:00 tasklist_applet --activate-goad-server tasklist_apple
+ 1417 ?        S      0:00 drivemount_applet --activate-goad-server drivemount_a
+ 1426 ?        S      0:00 fam
+ 1427 ?        S      0:00 nautilus --sm-config-prefix /nautilus-AsDeH6/ --sm-cl
+ 1428 ?        S      0:00 nautilus --sm-config-prefix /nautilus-AsDeH6/ --sm-cl
+ 1429 ?        S      0:00 nautilus --sm-config-prefix /nautilus-AsDeH6/ --sm-cl
+ 1430 ?        S      0:00 nautilus --sm-config-prefix /nautilus-AsDeH6/ --sm-cl
+ 1432 pts/0    S      0:49 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1456 pts/0    S      0:00 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1457 pts/0    S      0:00 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1458 pts/0    S      0:00 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1461 pts/0    S      0:00 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1462 pts/0    S      0:00 /usr/local/OpenOffice.org1.0.2/program/soffice.bin pr
+ 1855 pts/1    R      0:00 ps -ax

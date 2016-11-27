@@ -1,0 +1,16 @@
+A="Ala ma kota. Ala kota ma"
+
+echo "------------------------------------------"
+echo "A             : $A"
+echo "\${A/Ala/Ola}  : ${A/Ala/Ola}"
+echo "\${A//Ala/Ola} : ${A//Ala/Ola}"
+echo "-------dopasowanie na pocz±tku------------"
+echo "A              : $A"
+echo "\${A/#Ala/Ola}  : ${A/#Ala/Ola}"
+echo "\${A//#Ala/Ola} : ${A//#Ala/Ola}"
+echo "-------dopasowanie na koñcu---------------"
+echo "A              : $A"
+echo "\${A/%ma/mia³a}  : ${A/%ma/mia³a}"
+echo "\${A//%ma/mia³a} : ${A//%ma/mia³a}"
+echo "---------------- THE END -----------------"
+
